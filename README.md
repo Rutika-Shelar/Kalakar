@@ -1,2 +1,2 @@
 ## Website images
-![registration]("../img/prototype_images/registration.png")
+![registration]("src/main/resources/static/img/prototype_images/registration.pngg")
