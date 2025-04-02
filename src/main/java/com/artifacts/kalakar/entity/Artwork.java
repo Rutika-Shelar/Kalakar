@@ -11,8 +11,10 @@ public class Artwork {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
+    
     @Lob
-    private String imageUrl;
+    private byte[] file;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id")

@@ -3,33 +3,38 @@ const searchField = document.getElementById('search-field');
 const searchButton = document.getElementById('search-btn');
 const clearButton = document.getElementById('clear-search');
 
-// Get all artist cards
-const artistCards = document.querySelectorAll('.artist-card');
-
 // Function to filter artist cards based on search input
 function filterArtists() {
   const query = searchField.value.trim().toLowerCase(); // Normalize user input
 
-  // Loop through artist cards to match search
-  artistCards.forEach((card) => {
-    const artistData = card.getAttribute('data-name').toLowerCase(); // Normalize artist info
+  // Make an AJAX request to the server to search for artists
+  fetch(`/search?name=${encodeURIComponent(query)}`)
+    .then(response => response.json())
+    .then(data => {
+      // Hide all artist cards initially
+      artistCards.forEach(card => {
+        card.classList.add('hidden');
+        card.classList.remove('highlight');
+      });
 
-    if (artistData.includes(query)) {
-      // Show matching artist card and highlight
-      card.classList.remove('hidden');
-      card.classList.add('highlight');
-    } else {
-      // Hide non-matching artist card
-      card.classList.add('hidden');
-      card.classList.remove('highlight');
-    }
-  });
+      // Loop through the returned data to match and show artist cards
+      data.forEach(artist => {
+        const card = document.querySelector(`.artist-card[data-name="${artist.name.toLowerCase()}"]`);
+        if (card) {
+          card.classList.remove('hidden');
+          card.classList.add('highlight');
+        }
+      });
 
-  // Check if any visible cards found
-  const visibleCards = document.querySelectorAll('.artist-card:not(.hidden)');
-  if (visibleCards.length === 0 && query !== '') {
-    alert('No artists found. Please try a different search term.');
-  }
+      // Check if any visible cards found
+      const visibleCards = document.querySelectorAll('.artist-card:not(.hidden)');
+      if (visibleCards.length === 0 && query !== '') {
+        alert('No artists found. Please try a different search term.');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching search results:', error);
+    });
 }
 
 // Event listener for search button
@@ -41,15 +46,11 @@ searchField.addEventListener('input', filterArtists);
 // Event listener for Clear Search button
 clearButton.addEventListener('click', () => {
   searchField.value = ''; // Clear input field
-  artistCards.forEach((card) => {
+  artistCards.forEach(card => {
     // Remove hidden and highlight classes to display all cards
     card.classList.remove('hidden', 'highlight');
   });
 });
-
-
-
-
 
 let slideIndex = 1; // Start with the first slide
 showSlides(slideIndex);

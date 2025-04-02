@@ -30,6 +30,5 @@ public class PageController {
     	return "ProfilePage";
     }
     
-    
  
 }

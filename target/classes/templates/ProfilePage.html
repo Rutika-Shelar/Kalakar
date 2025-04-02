@@ -46,9 +46,9 @@
 	    <div class="popup-content">
 	        <span class="close-btn" onclick="document.getElementById('uploadPopup').style.display='none'">&times;</span>
 	        <h2>Upload Artwork</h2>
-	        <form action="/artwork" method="post" enctype="multipart/form-data">
+	        <form action="/upload" method="post" enctype="multipart/form-data">
 	            <label for="artworkTitle">Title:</label>
-	            <input type="text" id="artworkTitle" name="title" placeholder="Enter artwork title" required>
+	            <input type="text" id="title" name="title" placeholder="Enter artwork title" required>
 	            <input type="file" id="file" name="file" accept="image/*" required>
 	            <button type="submit" id="uploadBtn">Upload</button>
 	        </form>

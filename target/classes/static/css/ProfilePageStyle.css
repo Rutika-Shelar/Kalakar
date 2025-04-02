@@ -317,6 +317,22 @@ h2 {
     background-color: #e68900;
     transform: scale(1.05);
 }
+/* Style for the title input field */
+#title {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#title:focus {
+    border-color: #ff9800;
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }

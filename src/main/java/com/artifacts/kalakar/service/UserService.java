@@ -1,5 +1,7 @@
 package com.artifacts.kalakar.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.artifacts.kalakar.entity.User;
@@ -30,6 +32,8 @@ public class UserService {
 		userRepository.save(user);
 	}
 
-	
-	
+	public List<User> searchUserByName(String name) {
+	    return userRepository.findByName(name);
+	}
+
 }
