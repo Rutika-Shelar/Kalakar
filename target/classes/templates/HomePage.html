@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalakar - Discover the Artist in You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/HomePageStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script defer src="/js/HomePageScript.js"></script>
+</head>
+<body>
+	 
+	 <!-- Header -->
+	<header>
+	  <div class="header-container">
+	    <h1 class="logo">Kalakar</h1>
+	    <nav class="navbar">
+	      <a href="/">Home</a>
+	      <a href="#artists">Artists</a>
+	      <a href="#artworks">Artworks</a>
+	      <a href="/profile"><i class="fas fa-user profile-icon"></i></a>
+	    </nav>
+	  </div>
+	</header>
+
+	<!-- Hero Section -->
+	<section class="hero" id="home">
+	  <div class="slideshow-container">
+	    <div class="mySlides fade">
+	      <img src="/img/image_1.jpg" alt="Art 1">
+	    </div>
+	    <div class="mySlides fade">
+	      <img src="/img/image_9.jpg" alt="Art 2">
+	    </div>
+	    <div class="mySlides fade">
+	      <img src="/img/image_8.jpg" alt="Art 3">
+	    </div>
+	    <div class="mySlides fade">
+	      <img src="/img/image_12.jpg" alt="Art 4">
+	    </div>
+	
+	    <!-- Navigation Dots -->
+	    <div class="dots-container">
+	      <span class="dot" onclick="currentSlide(1)"></span>
+	      <span class="dot" onclick="currentSlide(2)"></span>
+	      <span class="dot" onclick="currentSlide(3)"></span>
+	      <span class="dot" onclick="currentSlide(4)"></span>
+	    </div>
+	  </div>
+	</section>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Find artists, art styles, or artworks..." id="search-field">
+    <button id="search-btn">Search</button>
+    <button id="clear-search">Clear</button>
+  </div>
+
+<!-- Featured Artists Section -->
+<section class="featured-artists" id="artists">
+  <h2>Find the Soul of India in Art</h2>
+  <p class="section-subtitle">Explore breathtaking creations from India’s finest artists.</p>
+
+  <div class="artist-cards">
+    <a href="/profile">
+      <div class="artist-card" data-name="ravi sharma madhubani painting">
+        <img src="/img/artist_1.png" alt="Artist 1">
+        <h3>Ravi Sharma</h3>
+        <p>Madhubani Painting Specialist</p>
+      </div>
+    </a>
+    <a href="/profile">
+      <div class="artist-card" data-name="anjali gupta warli art">
+        <img src="/img/artist_2.png" alt="Artist 2">
+        <h3>Anjali Gupta</h3>
+        <p>Warli Art Innovator</p>
+      </div>
+    </a>
+    <a href="/profile">
+      <div class="artist-card" data-name="suresh kumar tanjore painting">
+        <img src="/img/artist_3.png" alt="Artist 3">
+        <h3>Suresh Kumar</h3>
+        <p>Tanjore Painting Master</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <p>&copy; 2023 Kalakar. Discover your creative soul.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #F87C4D, #F4A632);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-vector/watercolor-world-art-day-background_23-2149327050.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .register-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            width: 380px;
+            position: relative;
+            border: 6px solid #F4A632;
+            background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
+        }
+
+        .register-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, #F4A632, #F87C4D);
+            z-index: -1;
+            border-radius: 20px;
+            filter: blur(8px);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #000000;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #E5E5E5;
+            border-radius: 8px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        button {
+            background: #F87C4D;
+            color: white;
+            padding: 12px;
+            border: none;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #D06035;
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #F87C4D;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Artist Registration</h2>
+        <form id="registerForm" action="/register" th:object="${user}" method="Post">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
+
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Create a password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            Already registered? <a href="/login">Login here</a>
+        </div>
+    </div>
+</body>
+</html>

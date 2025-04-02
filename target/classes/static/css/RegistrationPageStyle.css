@@ -1,0 +1,96 @@
+/* Full Page Background */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #FFFFFF; /* White background for a clean and minimalist look */
+    font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.container {
+    width: 900px;
+    height: 600px;
+    display: flex;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #F0F0F0; /* Subtle gray background for separation */
+}
+
+/* Left Side - Form */
+.form-container {
+    width: 50%;
+    background: #FFFFFF;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #000000; /* Black for strong contrast */
+}
+
+.form-container label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #555;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #E5E5E5; /* Light Gray border */
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #F87C4D; /* Primary Orange */
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #F4A632; /* Yellowish-Orange for hover effect */
+}
+
+.form-container p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form-container a {
+    color: #F87C4D; /* Orange accent */
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Right Side - Video */
+.video-container {
+    width: 50%;
+    position: relative;
+    background: #F4A632; /* Warm background accent */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

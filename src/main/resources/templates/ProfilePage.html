@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artist Profile</title>
+<link rel="stylesheet" href="/css/ProfilePageStyle.css">
+<script defer src="/js/ProfilePageScript.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<div class="header-container">
+			<h1 class="logo">Kalakar</h1>
+			<nav class="navbar">
+				<a href="/">Home</a> <a href="/logout">Logout</a>
+			</nav>
+		</div>
+	</header>
+
+	<!-- Profile Section -->
+	<section class="profile">
+		<div class="profile-banner">
+			<img src="/img/art_4.png" alt="Banner Image" class="banner-img">
+			<div class="floating-profile">
+				<img src="/img/artist_4.png" class="profile-pic" alt="Artist Photo">
+				<div class="profile-details">
+					<h2>Bharti Prajapati</h2>
+					<p>Renowned Artist & Painter</p>
+					<button class="add-artworks-btn" onclick="document.getElementById('uploadPopup').style.display='block'">Add Artworks</button>
+					<button class="book-service-btn"
+						onclick="window.location.href='/booking'">Book Service</button>
+				</div>
+			</div>
+			<div class="edit-icon-container">
+				<i class="fas fa-pencil-alt"></i>
+			</div>
+		</div>
+	</section>
+
+	<!-- Popup Window -->
+	<div id="uploadPopup" class="popup" style="display:none;">
+	    <div class="popup-content">
+	        <span class="close-btn" onclick="document.getElementById('uploadPopup').style.display='none'">&times;</span>
+	        <h2>Upload Artwork</h2>
+	        <form action="/artwork" method="post" enctype="multipart/form-data">
+	            <label for="artworkTitle">Title:</label>
+	            <input type="text" id="artworkTitle" name="title" placeholder="Enter artwork title" required>
+	            <input type="file" id="file" name="file" accept="image/*" required>
+	            <button type="submit" id="uploadBtn">Upload</button>
+	        </form>
+	    </div>
+	</div>
+
+	<!-- Artworks Section -->
+	<section class="artworks" id="artworks">
+	    <h1>Artworks</h1>
+	    <div class="artwork-cards">
+	        <div class="artwork-card">
+	            <img src="/img/image_4.jpg" alt="Artwork 1">
+	            <h3>Peacock in Madhubani Style</h3>
+	        </div>
+	        <div class="artwork-card">
+	            <img src="/img/image_2.jpg" alt="Artwork 2">
+	            <h3>Abstract Warli Patterns</h3>
+	        </div>
+	        <div class="artwork-card">
+	            <img src="/img/image_5.jpg" alt="Artwork 3">
+	            <h3>Tanjore Gold Leaf Art</h3>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Edit Profile Popup Window -->
+	<div id="editProfilePopup" class="popup" style="display:none;">
+		<div class="popup-content">
+			<span class="close-btn" onclick="document.getElementById('editProfilePopup').style.display='none'">&times;</span>
+			<h2>Edit Profile</h2>
+			<form id="editProfileForm">
+				<label for="editName">Name:</label> 
+				<input type="text" id="editName" name="name" placeholder="Enter your name" required> 
+				<label for="editDescription">Description:</label>
+				<textarea id="editDescription" name="description" placeholder="Enter a description" required></textarea>
+
+				<label for="editProfilePhoto">Profile Photo:</label> 
+				<input type="file" id="editProfilePhoto" name="profilePhoto" accept="image/*"> 
+				<label for="editBannerPhoto">Banner Photo:</label> 
+				<input type="file" id="editBannerPhoto" name="bannerPhoto" accept="image/*">
+
+				<button type="submit">Save Changes</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<p>&copy; 2025 Artflute. All Rights Reserved.</p>
+	</footer>
+</body>
+</html>

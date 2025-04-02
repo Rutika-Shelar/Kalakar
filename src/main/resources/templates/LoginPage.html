@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="/css/LoginPageStyle.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-section">
+        <video id="background-video" autoplay muted loop class="background-video">
+            <source src="/img/loginbanner.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <section class="login-container">
+        <!-- Left side: Welcome text and app info -->
+        <div class="left-section">
+            <h1>Welcome to Kalakar</h1>
+            <p>Your one-stop solution for booking talented artists.</p>
+            <p>Connect with local artists to bring creativity to your events.</p>
+        </div>
+
+        <!-- Right side: Login form -->
+        <div class="form-section">
+            <h2 class="login-title">Login</h2>
+
+            <!-- User Login Form -->
+            <div id="user-login" class="login-form user-form active">
+                <form action="/login" method="POST">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" class="btn login-btn">Login</button>
+                    <p th:if="${errorMessage}" style="color: red;">[[${errorMessage}]]</p>
+                    <p th:if="${successMessage}" style="color: green;">[[${successMessage}]]</p>
+                    <p class="register-link">Don't have an account? <a href="/register">Register here</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('background-video').playbackRate = 0.8;
+    </script>
+</body>
+</html>
