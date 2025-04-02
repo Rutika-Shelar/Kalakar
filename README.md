@@ -4,14 +4,14 @@
 
 
 ## Website images
-![registration]("src/main/resources/static/img/prototype_images/registration.png")
-![login]("src/main/resources/static/img/prototype_images/login.png")
-![search_function]("src/main/resources/static/img/prototype_images/search_function.png")
-![edit_profile]("src/main/resources/static/img/prototype_images/edit_profile.png")
-![bookingpage]("src/main/resources/static/img/prototype_images/bookingpage.png")
-![profile_page]("src/main/resources/static/img/prototype_images/profile_page.png")
-![home_page]("src/main/resources/static/img/prototype_images/home_page.png")
-
+![registration](src/main/resources/static/img/prototype_images/registration.png)
+![login](src/main/resources/static/img/prototype_images/login.png)
+![search_function](src/main/resources/static/img/prototype_images/search_function.png)
+![edit_profile](src/main/resources/static/img/prototype_images/edit_profile.png)
+![bookingpage](src/main/resources/static/img/prototype_images/bookingpage.png)
+![profile_page](src/main/resources/static/img/prototype_images/profile_page.png")
+![home_page](src/main/resources/static/img/prototype_images/home_page.png)
+![upload_arwork](src/main/resources/static/img/prototype_images/upload_artwork.png)
 
 ## Objectives:
 
